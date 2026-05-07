@@ -1,6 +1,4 @@
 # RAG-Based LLM System for Mission-Critical Infrastructure
-*AI Engineering — Large Language Models & RAG Systems*
-
 ---
 
 ## 🚀 Kurulum ve Çalıştırma
