@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;600;700;800&display=swap');
+
+/* ─── CSS Variables ─────────────────────────────────────────── */
+:root {
+    --bg:      #0a0c10;
+    --surface: #111318;
+    --border:  #1e2330;
+    --accent:  #00d4ff;
+    --accent2: #7c3aed;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger:  #ef4444;
+    --text:    #e2e8f0;
+    --muted:   #64748b;
+    --slate:   #94a3b8;
+    --dark:    #475569;
+}
+
+/* ─── Global Reset ───────────────────────────────────────────── */
+* { font-family: 'JetBrains Mono', monospace; }
+
+/* ─── App Shell ──────────────────────────────────────────────── */
+.stApp { background: var(--bg) !important; color: var(--text) !important; }
+.stApp > header { background: transparent !important; }
+
+/* ─── Sidebar ────────────────────────────────────────────────── */
+section[data-testid="stSidebar"] {
+    background: var(--surface) !important;
+    border-right: 1px solid var(--border);
+}
+section[data-testid="stSidebar"] * { color: var(--text) !important; }
+
+/* ─── Metric Cards ───────────────────────────────────────────── */
+[data-testid="metric-container"] {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+}
+[data-testid="stMetricValue"] { color: var(--accent) !important; font-weight: 700; }
+
+/* ─── Buttons ────────────────────────────────────────────────── */
+.stButton > button {
+    background: linear-gradient(135deg, #00d4ff22, #7c3aed22) !important;
+    border: 1px solid var(--accent) !important;
+    color: var(--accent) !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease !important;
+}
+.stButton > button:hover {
+    background: linear-gradient(135deg, #00d4ff44, #7c3aed44) !important;
+    box-shadow: 0 0 20px #00d4ff33 !important;
+}
+
+/* ─── Text Inputs ────────────────────────────────────────────── */
+.stTextInput > div > div > input,
+.stTextArea > div > div > textarea {
+    background: var(--surface) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text) !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    border-radius: 6px !important;
+}
+.stTextInput > div > div > input:focus,
+.stTextArea > div > div > textarea:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 2px #00d4ff22 !important;
+}
+
+/* ─── Selectbox ──────────────────────────────────────────────── */
+.stSelectbox > div > div {
+    background: var(--surface) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text) !important;
+}
+
+/* ─── Expanders ──────────────────────────────────────────────── */
+.streamlit-expanderHeader {
+    background: var(--surface) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text) !important;
+}
+
+/* ─── Code Blocks ────────────────────────────────────────────── */
+.stCodeBlock { border: 1px solid var(--border); border-radius: 8px; }
+
+/* ─── Progress / Slider ──────────────────────────────────────── */
+.stProgress > div > div > div { background: var(--accent) !important; }
+.stSlider   > div > div > div { background: var(--accent) !important; }
+
+/* ─── Tabs ───────────────────────────────────────────────────── */
+div[data-testid="stTab"] button {
+    color: var(--muted) !important;
+    font-family: 'JetBrains Mono' !important;
+}
+div[data-testid="stTab"] button[aria-selected="true"] {
+    color: var(--accent) !important;
+    border-bottom-color: var(--accent) !important;
+}
+
+/* ─── Markdown text ──────────────────────────────────────────── */
+[data-testid="stMarkdownContainer"] p  { color: var(--text) !important; }
+[data-testid="stMarkdownContainer"] li { color: var(--text) !important; }
+
+/* ─── Typography ─────────────────────────────────────────────── */
+h1, h2, h3 { font-family: 'Syne', sans-serif !important; color: var(--text) !important; }
+
+/* ─── Panel ──────────────────────────────────────────────────── */
+.panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 8px 0;
+}
+
+.panel-header {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+.panel-header-mt { margin-top: 16px; }
+
+/* ─── Hero Title / Subtitle ──────────────────────────────────── */
+.title-hero {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #00d4ff, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+.title-hero-sm { font-size: 18px; }
+
+.subtitle-hero {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+.subtitle-hero-sm { font-size: 10px; }
+
+.sidebar-header { padding: 16px 0 8px; }
+.page-hero      { padding: 8px 0 24px; }
+
+/* ─── Status Dots ────────────────────────────────────────────── */
+.status-dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: pulse 2s infinite;
+}
+.dot-green  { background: var(--success); box-shadow: 0 0 8px var(--success); }
+.dot-yellow { background: var(--warning); box-shadow: 0 0 8px var(--warning); }
+.dot-red    { background: var(--danger);  box-shadow: 0 0 8px var(--danger);  }
+.dot-blue   { background: var(--accent);  box-shadow: 0 0 8px var(--accent);  }
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.4; }
+}
+
+/* ─── Log Entries ────────────────────────────────────────────── */
+.log-entry {
+    font-size: 12px;
+    padding: 4px 8px;
+    margin: 2px 0;
+    border-left: 3px solid var(--border);
+    color: var(--muted);
+}
+.log-entry.info    { border-color: var(--accent);  color: var(--text);    }
+.log-entry.success { border-color: var(--success); color: var(--success); }
+.log-entry.warning { border-color: var(--warning); color: var(--warning); }
+.log-entry.error   { border-color: var(--danger);  color: var(--danger);  }
+.log-timestamp { color: var(--dark); }
+.log-scroll    { height: 480px; overflow-y: auto; padding: 4px; }
+
+/* ─── Chunk Badges & Similarity Bar ─────────────────────────── */
+.chunk-badge {
+    display: inline-block;
+    background: #00d4ff11;
+    border: 1px solid #00d4ff33;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 11px;
+    color: var(--accent);
+    margin: 2px;
+}
+.chunk-header  { display: flex; justify-content: space-between; margin-bottom: 6px; }
+.chunk-text    { font-size: 11px; color: var(--slate); margin-top: 8px; line-height: 1.5; }
+.chunk-source  { font-size: 10px; color: var(--dark); margin-top: 4px; }
+
+.score-label   { font-size: 12px; font-weight: 700; }
+.score-green   { color: var(--success); }
+.score-yellow  { color: var(--warning); }
+.score-red     { color: var(--danger);  }
+
+.similarity-bar {
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #00d4ff, #7c3aed);
+    margin: 4px 0;
+}
+
+/* ─── Queue Items ────────────────────────────────────────────── */
+.queue-item {
+    background: #7c3aed11;
+    border: 1px solid #7c3aed33;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin: 4px 0;
+    font-size: 12px;
+}
+.queue-item-header { display: flex; justify-content: space-between; }
+.queue-item-id     { color: #a78bfa; font-weight: 700; }
+.queue-item-status { color: var(--success); font-size: 11px; }
+.queue-item-query  { color: var(--slate);   font-size: 11px; margin-top: 4px; }
+.queue-item-ts     { color: var(--dark);    font-size: 10px; }
+.queue-empty       { color: var(--dark);    font-size: 13px; }
+
+/* ─── Chat Bubbles ───────────────────────────────────────────── */
+.user-bubble-wrap { text-align: right; margin: 8px 0; }
+.user-bubble {
+    background: #1e2330;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 13px;
+    display: inline-block;
+    max-width: 85%;
+}
+
+.answer-box {
+    background: linear-gradient(135deg, #10b98111, #00d4ff11);
+    border: 1px solid #10b98144;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 12px 0;
+    font-size: 14px;
+    line-height: 1.8;
+}
+.hallucination-safe { border-left: 4px solid var(--success); padding-left: 12px; }
+.answer-label       { font-size: 10px; color: var(--success); font-weight: 700; margin-bottom: 8px; }
+
+.source-ref {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+}
+
+/* ─── Guard Rails ────────────────────────────────────────────── */
+.guardrails { font-size: 11px; color: var(--slate); line-height: 1.8; }
+.gr-ok      { color: var(--success); }
+.gr-warn    { color: var(--warning); }
+
+/* ─── Redis Key Panel ────────────────────────────────────────── */
+.redis-panel-accent  { border-left: 3px solid var(--accent);  }
+.redis-panel-success { border-left: 3px solid var(--success); }
+.redis-panel-danger  { border-left: 3px solid var(--danger);  }
+.redis-key-label     { font-size: 10px; color: var(--dark);   margin-bottom: 2px; }
+.redis-key-name      { font-size: 12px; }
+.redis-key-value     { font-size: 11px; color: var(--slate);  margin-top: 4px; }
+.redis-accent-text   { color: var(--accent);  }
+.redis-success-text  { color: var(--success); }
+.redis-danger-text   { color: var(--danger);  }
+
+/* ─── Context Engine ─────────────────────────────────────────── */
+.ctx-note    { font-size: 11px; color: var(--slate);   margin-bottom: 12px; }
+.ctx-row     { display: flex; justify-content: space-between; margin: 8px 0; font-size: 12px; }
+.ctx-accent  { color: var(--accent);  }
+.ctx-warning { color: var(--warning); }
+.ctx-success { color: var(--success); }
+.ctx-muted   { color: var(--slate);   }
+
+/* ─── Sync / Pipeline Panels ─────────────────────────────────── */
+.sync-panel   { font-size: 12px; line-height: 2; }
+.sync-sub     { color: var(--dark); }
+.pipeline     { font-size: 12px; line-height: 2; }
+.pipeline-sub { color: var(--dark); padding-left: 16px; }
+
+/* ─── Status Messages (dynamic) ──────────────────────────────── */
+.fault-status  { color: var(--warning); font-size: 13px; }
+.ingest-status { color: var(--accent);  font-size: 13px; }
+
+/* ─── Vector Badge ───────────────────────────────────────────── */
+.vector-badge {
+    background: #7c3aed22;
+    border: 1px solid #7c3aed55;
+    color: #a78bfa;
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 10px;
+    font-weight: 600;
+}
