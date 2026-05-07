@@ -1,5 +1,4 @@
 # RAG-Based LLM System for Mission-Critical Infrastructure
----
 
 ## 🚀 Kurulum ve Çalıştırma
 
